@@ -8,6 +8,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField]
     Image[] inventoryUI;
 
+    public Image slot1;
+
     Image[] itemList;
     public PlayerController player;
 
