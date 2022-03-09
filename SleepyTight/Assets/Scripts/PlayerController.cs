@@ -7,58 +7,51 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 20;
-    
 
-    public Image[] inventory;
+    //Inventory Items =========================================
+    //Puzzle 1
+    bool battery = false;
+    bool violinCables = false;
+    bool violinRune = false;
 
+    //Puzzle 2
+    bool xylophoneKey1 = false;
+    bool xylophoneKey2 = false;
+    bool xylophoneRune = false;
+
+    //Puzzle 3
+    bool key1 = false;
+    bool key2 = false;
+    bool key3 = false;
+    bool drumRune = false;
+
+    //Puzzle 4
+    bool pianoKey1 = false;
+    bool pianoKey2 = false;
+    bool pianoKey3 = false;
+    bool pianoRune = false;
+
+    //Puzzle 5
+    bool finger = false;
+    bool flutePiece2 = false;
+    bool fluteBreath = false;
+    bool fluteRune = false;
+
+    //Meta-Puzzle
+    bool doorKey = false;
     float h = 0;
     float v = 0;
-    //Rigidbody2D rb;
     SpriteRenderer spr;
 
     // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * speed * Time.deltaTime, ForceMode2D.Impulse);
-        }
-
-        else if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(Vector2.down * speed * Time.deltaTime, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-        }
-
-        if(Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(Vector2.left * speed * Time.deltaTime, ForceMode2D.Impulse);
-        }
-
-        else if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(Vector2.right * speed * Time.deltaTime, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-
-        Mathf.Clamp(rb.velocity.magnitude,0f, speed);
-        */
 
         h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
