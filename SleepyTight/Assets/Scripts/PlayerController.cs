@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     //Meta-Puzzle
     bool doorKey = false;
+
+
     float h = 0;
     float v = 0;
     SpriteRenderer spr;
@@ -88,20 +90,7 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "Item")
         {
-            Image itemImage = other.GetComponent<Image>();
-            if(Input.GetKey(KeyCode.E))
-            {
-                for(int i = 0; i < inventory.Length; i++)
-                {
-                    if(inventory[i] == null)
-                    {
-                        inventory[i] = itemImage;
-                        other.gameObject.SetActive(false);
-                        break;
-                    }
-                }
-                
-            }
+            
         }
     }
 
