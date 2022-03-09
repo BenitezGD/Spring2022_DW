@@ -1,20 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
     public float speed = 20;
+    
+    [SerializeField]
+    Image[] inventory;
+
     float h = 0;
     float v = 0;
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
     SpriteRenderer spr;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
     }
 
@@ -69,8 +74,6 @@ public class PlayerController : MonoBehaviour
         {
             spr.flipX = false;
         }
-        
-
     }
 
 
@@ -87,6 +90,24 @@ public class PlayerController : MonoBehaviour
             else
             {
                 other.transform.parent = null;
+            }
+        }
+
+        if(other.tag == "Item")
+        {
+            Image itemSprite = other.GetComponent<Image>();
+            if(Input.GetKey(KeyCode.E))
+            {
+                for(int i = 0; i < inventory.Length; i++)
+                {
+                    if(inventory[i] == null)
+                    {
+                        inventory[i] = itemSprite;
+                        other.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+                
             }
         }
     }
