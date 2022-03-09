@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 20;
     
 
-    public Sprite[] inventory;
+    public Image[] inventory;
 
     float h = 0;
     float v = 0;
@@ -95,14 +95,14 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "Item")
         {
-            Sprite itemSprite = other.GetComponent<SpriteRenderer>().sprite;
+            Image itemImage = other.GetComponent<Image>();
             if(Input.GetKey(KeyCode.E))
             {
                 for(int i = 0; i < inventory.Length; i++)
                 {
                     if(inventory[i] == null)
                     {
-                        inventory[i] = itemSprite;
+                        inventory[i] = itemImage;
                         other.gameObject.SetActive(false);
                         break;
                     }

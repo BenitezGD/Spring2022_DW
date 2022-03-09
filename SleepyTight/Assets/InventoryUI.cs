@@ -24,10 +24,7 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < player.inventory.Length; i++)
             {
-                if(player.inventory[i].name == "Red")
-                {
-                    foreach(Image img in )
-                }
+                player.inventory[i] = inventoryUI[i];
             }
         }
     }
