@@ -24,7 +24,7 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < player.inventory.Length; i++)
             {
-                player.inventory[i] = inventoryUI[i];
+                inventoryUI[i] = player.inventory[i];
             }
         }
     }
