@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 20;
     
-    [SerializeField]
-    Image[] inventory;
+
+    public Sprite[] inventory;
 
     float h = 0;
     float v = 0;
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "Item")
         {
-            Image itemSprite = other.GetComponent<Image>();
+            Sprite itemSprite = other.GetComponent<SpriteRenderer>().sprite;
             if(Input.GetKey(KeyCode.E))
             {
                 for(int i = 0; i < inventory.Length; i++)
