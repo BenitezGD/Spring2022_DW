@@ -3478,6 +3478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scroll1: {fileID: 752509062}
   scroll2: {fileID: 1193344498}
+  knob1: {fileID: 0}
   scroll1Correct: {fileID: 2015594300}
   scroll2Correct: {fileID: 754084838}
   violinCable: 0
