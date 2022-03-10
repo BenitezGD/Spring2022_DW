@@ -24,6 +24,8 @@ public class ViolinTune : MonoBehaviour
     float timer = 1.0f;
     int sequenceNumber = 0;
 
+    public PlayerController player;
+    public bool puzzleSolved = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +46,6 @@ public class ViolinTune : MonoBehaviour
             yellow.interactable = true;
 
             battery.gameObject.SetActive(true);
-
-
 
             timer -= Time.deltaTime;
 
@@ -95,6 +95,7 @@ public class ViolinTune : MonoBehaviour
                 green.interactable = false;
                 cyan.interactable = false;
                 yellow.interactable = false;
+                puzzleSolved = true;
             }
 
             else
@@ -156,10 +157,9 @@ public class ViolinTune : MonoBehaviour
 
     public void checkForBattery()
     {
-        //CHECK FOR BATTERY IN PLAYER INVENTORY HERE
-        //IF there is, place battery 
-        //IF NOT, do nothing
-
-        batteryPlaced = true;
+        if (player.checkBattery())
+        {
+            batteryPlaced = true;
+        }
     }
 }

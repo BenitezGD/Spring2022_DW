@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Moveable
   - Item
+  - Door
+  - ViolinTune
+  - ViolinPanel
   layers:
   - Default
   - TransparentFX

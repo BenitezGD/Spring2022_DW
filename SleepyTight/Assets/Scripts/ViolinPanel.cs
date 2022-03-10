@@ -20,6 +20,9 @@ public class ViolinPanel : MonoBehaviour
     public bool scroll1Position = false;
     public bool scroll2Position = false;
 
+    public PlayerController player;
+
+    public bool puzzleSolved = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,17 @@ public class ViolinPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(scroll1Position && scroll2Position)
+        {
+            puzzleSolved = true;
+        }
+
+        else
+        {
+            puzzleSolved = false;
+        }
+
+
         if (violinCable == true)
         {
             scroll1.interactable = true;
@@ -69,9 +83,9 @@ public class ViolinPanel : MonoBehaviour
 
     public void violinCablesGotten()
     {
-        //CHECK PLAYER INVENTORY
-        //If cables in inventory, place cables 
-        //if not, do nothing
-        violinCable = true;
+        if(player.checkCables())
+        {
+            violinCable = true;
+        }
     }
 }

@@ -72,6 +72,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public bool checkBattery()
+    {
+        return battery;
+    }
+
+    public bool checkCables()
+    {
+        return violinCables;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Moveable")
@@ -88,9 +98,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(other.tag == "Item")
+
+        if(other.tag == "Battery")
         {
-            
+            if (Input.GetKey(KeyCode.E))
+            {
+                battery = true;
+                other.gameObject.SetActive(false);
+            }
+        }
+
+        if (other.tag == "Cables")
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                violinCables = true;
+                other.gameObject.SetActive(false);
+            }
         }
     }
 
