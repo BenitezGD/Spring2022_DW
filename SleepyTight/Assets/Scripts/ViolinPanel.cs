@@ -15,6 +15,7 @@ public class ViolinPanel : MonoBehaviour
 
     //Check if the player has the Violin Cables to be able to use the panel
     public bool violinCable = false;
+    public Image violinCables;
 
     public bool scroll1Position = false;
     public bool scroll2Position = false;
@@ -23,13 +24,19 @@ public class ViolinPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        scroll1.interactable = false;
+        scroll2.interactable = false;
     }
 
     // Update is called once per frame
     void Update()
     {
- 
+        if (violinCable == true)
+        {
+            scroll1.interactable = true;
+            scroll2.interactable = true;
+            violinCables.gameObject.SetActive(true);
+        }
         //Top Scroll Bar
         if (scroll1.value > 0.75 && scroll1.value < 0.90)
         {
@@ -58,5 +65,13 @@ public class ViolinPanel : MonoBehaviour
             scroll2Position = false;
         }
 
+    }
+
+    public void violinCablesGotten()
+    {
+        //CHECK PLAYER INVENTORY
+        //If cables in inventory, place cables 
+        //if not, do nothing
+        violinCable = true;
     }
 }
