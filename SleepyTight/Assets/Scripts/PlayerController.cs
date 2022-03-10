@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator anim;
+
 
     public float speed = 20;
 
@@ -60,15 +62,28 @@ public class PlayerController : MonoBehaviour
 
         transform.position += new Vector3(h, 0, v);
 
-        if(h < 0 )
+        if (h < 0)
         {
             spr.flipX = true;
+            anim.SetBool("isMoving", true);
         }
-
         else if (h > 0)
         {
             spr.flipX = false;
+            anim.SetBool("isMoving", true);
         }
+        else { anim.SetBool("isMoving", false); }
+
+        if (v != 0)
+        {
+
+          anim.SetBool("isMoving", true); 
+
+        }
+        else if (v + h == 0) { anim.SetBool("isMoving", false); }
+
+
+
     }
 
 
