@@ -26,7 +26,7 @@ public class SoundEffect : MonoBehaviour
     public void playSound(string soundName)
     {
 
-        soundName.Play();
+        //soundName.Play();
 
 
 

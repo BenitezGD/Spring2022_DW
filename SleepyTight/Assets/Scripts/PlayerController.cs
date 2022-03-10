@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
 
+
     public float speed = 20;
 
     //Inventory Items =========================================
@@ -47,6 +48,13 @@ public class PlayerController : MonoBehaviour
     float v = 0;
     SpriteRenderer spr;
 
+
+    bool useOnce = true;
+
+
+
+    public AudioSource pickup;
+    public AudioSource collect;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,14 +109,25 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "Moveable")
         {
-            if(Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 other.transform.parent = transform;
+              
                 
+                if (useOnce == true)
+                {
+
+                    pickup.Play();
+                    useOnce = false;
+
+                }
+
+
             }
 
             else
             {
+                useOnce = true;
                 other.transform.parent = null;
             }
         }
@@ -120,6 +139,13 @@ public class PlayerController : MonoBehaviour
             {
                 battery = true;
                 other.gameObject.SetActive(false);
+                
+
+                    collect.Play();
+                    useOnce = false;
+
+                
+                
             }
         }
 
@@ -129,6 +155,10 @@ public class PlayerController : MonoBehaviour
             {
                 violinCables = true;
                 other.gameObject.SetActive(false);
+                
+                    collect.Play();
+                   
+               
             }
         }
     }
