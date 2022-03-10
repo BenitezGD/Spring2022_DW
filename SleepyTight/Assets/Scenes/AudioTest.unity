@@ -261,5 +261,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
+      propertyPath: xyloPlaying
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
+      propertyPath: drumsPlaying
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
+      propertyPath: flutePlaying
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
+      propertyPath: pianoPlaying
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
+      propertyPath: violinPlaying
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
