@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Moveable
   - Item
+<<<<<<< Updated upstream
+=======
+  - Door
+  - ViolinTune
+  - ViolinPanel
+  - Battery
+  - Cables
+  - MusicPlayer
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
