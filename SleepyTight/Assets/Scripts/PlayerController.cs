@@ -15,30 +15,30 @@ public class PlayerController : MonoBehaviour
     //Puzzle 1
     bool battery = false;
     bool violinCables = false;
-    bool violinRune = false;
+    public bool violinRune = false;
 
     //Puzzle 2
     bool xylophoneKey1 = false;
     bool xylophoneKey2 = false;
-    bool xylophoneRune = false;
+    public bool xylophoneRune = false;
 
     //Puzzle 3
     bool key1 = false;
     bool key2 = false;
     bool key3 = false;
-    bool drumRune = false;
+    public bool drumRune = false;
 
     //Puzzle 4
     bool pianoKey1 = false;
     bool pianoKey2 = false;
     bool pianoKey3 = false;
-    bool pianoRune = false;
+    public bool pianoRune = false;
 
     //Puzzle 5
     bool finger = false;
     bool flutePiece2 = false;
     bool fluteBreath = false;
-    bool fluteRune = false;
+    public bool fluteRune = false;
 
     //Meta-Puzzle
     bool doorKey = false;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     bool useOnce = true;
 
-
+    public MusicController musicPlayer;
 
     public AudioSource pickup;
     public AudioSource collect;
@@ -85,10 +85,40 @@ public class PlayerController : MonoBehaviour
         if (v != 0)
         {
 
-          anim.SetBool("isMoving", true); 
+            anim.SetBool("isMoving", true);
 
         }
         else if (v + h == 0) { anim.SetBool("isMoving", false); }
+
+
+        if (violinRune == true)
+        {
+            musicPlayer.violinPlaying = true;
+
+        }
+        if (pianoRune == true)
+        {
+            musicPlayer.pianoPlaying = true;
+
+        }
+        if (drumRune == true)
+        {
+            musicPlayer.drumsPlaying = true;
+
+        }
+        if (xylophoneRune == true)
+        {
+            musicPlayer.xyloPlaying = true;
+
+        }
+        if (fluteRune == true)
+        {
+            musicPlayer.flutePlaying = true;
+
+        }
+
+
+
 
 
 

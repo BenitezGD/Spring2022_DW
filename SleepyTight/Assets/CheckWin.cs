@@ -8,6 +8,8 @@ public class CheckWin : MonoBehaviour
     public ViolinPanel vp;
     public ViolinTune vt;
 
+    public GameObject door;
+    public PlayerController player;
     public Image violinRune;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,9 @@ public class CheckWin : MonoBehaviour
     {
         if(vp.puzzleSolved && vt.puzzleSolved)
         {
+            door.gameObject.SetActive(false);
             violinRune.gameObject.SetActive(true);
+            player.violinRune = true;
         }
     }
 }
