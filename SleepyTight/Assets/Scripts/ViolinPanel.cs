@@ -10,8 +10,6 @@ public class ViolinPanel : MonoBehaviour
     public Scrollbar scroll1;
     public Scrollbar scroll2;
 
-    public RectTransform knob1;
-
     public Image scroll1Correct;
     public Image scroll2Correct;
 
