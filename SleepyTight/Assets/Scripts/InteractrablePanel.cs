@@ -12,6 +12,8 @@ public class InteractrablePanel : MonoBehaviour
 
     public bool playerInteracting = false;
 
+    bool panelOpen = false;
+
 
     void Update()
     {
@@ -21,11 +23,24 @@ public class InteractrablePanel : MonoBehaviour
             {
                 playerInteracting = true;
                 UI_Panel.SetActive(true);
+                panelOpen = true;
+
+                
+            }
+        }
+
+        if(panelOpen)
+        {
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                UI_Panel.SetActive(false);
+                panelOpen = false;
+                playerInteracting = false;
             }
         }
     }
 
-    void OnTriggerStay2D (Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
