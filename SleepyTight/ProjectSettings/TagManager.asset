@@ -9,6 +9,8 @@ TagManager:
   - Door
   - ViolinTune
   - ViolinPanel
+  - Battery
+  - Cables
   layers:
   - Default
   - TransparentFX
