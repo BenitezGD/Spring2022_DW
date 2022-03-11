@@ -25,6 +25,8 @@ TagManager:
   - PianoKey2
   - PianoKey5
   - PianoKey4
+  - FluteMouth
+  - FluteEnd
   layers:
   - Default
   - TransparentFX
