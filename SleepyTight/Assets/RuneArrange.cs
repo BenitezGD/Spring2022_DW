@@ -9,6 +9,8 @@ public class RuneArrange : MonoBehaviour
     public Drag piano;
     public Drag violin;
 
+    public AudioSource final;
+
     public bool puzzleSolved = false;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,16 @@ public class RuneArrange : MonoBehaviour
         if(flute.correct && xylo.correct && piano.correct && violin.correct)
         {
             puzzleSolved = true;
+            if (!final.isPlaying)
+            {
+                final.Play();
+
+            }
+
         }
 
     }
+
+    
+
 }
