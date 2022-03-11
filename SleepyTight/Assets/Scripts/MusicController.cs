@@ -26,13 +26,20 @@ public class MusicController : MonoBehaviour
 
     private bool first = true;
 
-
+    public bool isGameDone;
     
 
     // Update is called once per frame
     void Update()
     {
-        drumsPlaying = true;
+        if (isGameDone == true)
+        {
+
+            drumsPlaying = false;
+
+        }
+        else { drumsPlaying = true; }
+
         if (first == true)
         {
             if (pianoPlaying == true)

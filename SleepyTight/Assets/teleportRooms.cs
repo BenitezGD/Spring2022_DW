@@ -10,6 +10,8 @@ public class teleportRooms : MonoBehaviour
     public GameObject player;
     public Transform playerPos;
 
+    public MusicController music;
+
     public int tpn;
 
     public Transform tp1;
@@ -23,7 +25,8 @@ public class teleportRooms : MonoBehaviour
     public Transform ctp3;
     public Transform ctp4;
     public Transform ctp5;
-   
+
+    private bool gameIsDone;
 
     public GameObject finalCanvas;
 
@@ -58,10 +61,25 @@ public class teleportRooms : MonoBehaviour
         else if(tpn == 6)
         {
             finalCanvas.gameObject.SetActive(true);
+            player.gameObject.SetActive(false);
+            gameIsDone = true;
         }
 
 
 
+    }
+
+    private void Update()
+    {
+        if (gameIsDone == true) {
+
+            music.isGameDone = true;
+
+            music.flutePlaying = false;
+            music.drumsPlaying = false;
+            music.violinPlaying = false;
+            music.xyloPlaying = false;
+        }
     }
 
     public void prepLoad(int roomNum)

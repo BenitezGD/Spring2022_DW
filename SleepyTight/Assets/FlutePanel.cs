@@ -15,11 +15,19 @@ public class FlutePanel : MonoBehaviour
 
     public PlayerController player;
 
+    public AudioSource badNote;
+    public AudioSource n1;
+    public AudioSource n2;
+    public AudioSource n3;
+    public AudioSource n4;
+
+    public GameObject fluteRune;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        badNote.Play();
     }
 
     // Update is called once per frame
@@ -28,6 +36,18 @@ public class FlutePanel : MonoBehaviour
         if(fluteMouth.IsActive() && fluteEnd.IsActive())
         {
             puzzleSolved = true;
+
+            fluteRune.gameObject.SetActive(true);
+
+            if (!n1.isPlaying && !n4.isPlaying) {
+
+                n1.Play();
+                n4.Play();
+
+            }
+
+
+
         }
     }
 
@@ -37,6 +57,7 @@ public class FlutePanel : MonoBehaviour
         {
             fluteEnd.gameObject.SetActive(true);
             fluteEndEmpty.gameObject.SetActive(false);
+            n2.Play();
         }
     }
 
@@ -46,6 +67,7 @@ public class FlutePanel : MonoBehaviour
         {
             fluteMouth.gameObject.SetActive(true);
             fluteMouthEmpty.gameObject.SetActive(false);
+            n3.Play();
         }
     }
 }
