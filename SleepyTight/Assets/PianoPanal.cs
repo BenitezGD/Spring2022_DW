@@ -26,6 +26,7 @@ public class PianoPanal : MonoBehaviour
     public AudioSource note4;
     public AudioSource note5;
     public AudioSource complete;
+    public AudioSource wrong;
 
     bool musicboxPlaying = false;
 
@@ -69,6 +70,9 @@ public class PianoPanal : MonoBehaviour
                     playerChoice[i] = 0;
                     keysPressed = 0;
                 }
+
+                wrong.Play();
+
             }
         }
 

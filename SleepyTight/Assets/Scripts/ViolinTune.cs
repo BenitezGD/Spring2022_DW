@@ -116,11 +116,8 @@ public class ViolinTune : MonoBehaviour
                     playerChoice[i] = 0;    
                 }
                 buttonsPressedInARow = 0;
-                if (!wrongNote.isPlaying)
-                {
-                    wrongNote.Play();
-                }
-                //PLAY SOUND HERE WHEN WRONG
+                wrongNote.Play();
+                
             }
         }
     }
