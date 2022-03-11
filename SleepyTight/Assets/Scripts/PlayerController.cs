@@ -53,18 +53,35 @@ public class PlayerController : MonoBehaviour
 
     public MusicController musicPlayer;
 
+    public GameObject questionMark;
+    public bool interact;
+
     public AudioSource pickup;
     public AudioSource collect;
     // Start is called before the first frame update
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
+        questionMark.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (interact == true)
+        {
+            questionMark.gameObject.SetActive(true);
+        }
+        else if (interact == false)
+        {
+            questionMark.gameObject.SetActive(false);
+        }
+
+
+        
+
+        
         h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
@@ -139,14 +156,14 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "Moveable")
         {
+            interact = true;
             if (Input.GetKey(KeyCode.E))
             {
                 other.transform.parent = transform;
-              
+               
                 
                 if (useOnce == true)
                 {
-
                     pickup.Play();
                     useOnce = false;
 
@@ -154,7 +171,7 @@ public class PlayerController : MonoBehaviour
 
 
             }
-
+            
             else
             {
                 useOnce = true;
@@ -165,13 +182,13 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "Battery")
         {
+            interact = true;
             if (Input.GetKey(KeyCode.E))
             {
                 battery = true;
                 other.gameObject.SetActive(false);
-                
-
-                    collect.Play();
+                interact = false;
+                collect.Play();
                     useOnce = false;
 
                 
@@ -179,18 +196,52 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (other.tag == "Interact")
+        {
+
+            interact = true;
+
+
+        }
+
+
+
+
         if (other.tag == "Cables")
         {
+            interact = true;
             if (Input.GetKey(KeyCode.E))
             {
                 violinCables = true;
                 other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+
                 
-                    collect.Play();
-                   
-               
             }
         }
     }
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "Cables")
+        {
+            interact = false;
+        }
+        if (col.tag == "Interact")
+        {
+            interact = false;
+        }
+        if (col.tag == "Battery")
+        {
+            interact = false;
+        }
+        if (col.tag == "Moveable")
+        {
+            interact = false;
+        }
+
+    }
+
 
 }
