@@ -58,6 +58,7 @@ public class PianoPanal : MonoBehaviour
                 for(int i = 0; i < playerChoice.Length; i++)
                 {
                     playerChoice[i] = 0;
+                    keysPressed = 0;
                 }
             }
         }
