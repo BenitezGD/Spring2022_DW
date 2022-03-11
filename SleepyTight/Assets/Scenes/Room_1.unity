@@ -5483,6 +5483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b266b9757ee8a46a5a160bfeb38ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 66442362}
   vp: {fileID: 1703941093}
   vt: {fileID: 1875179523}
   door: {fileID: 1863069397}
