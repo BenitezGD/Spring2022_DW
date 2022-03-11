@@ -31,7 +31,7 @@ public class InteractrablePanel : MonoBehaviour
 
         if(panelOpen)
         {
-            if(Input.GetKey(KeyCode.Escape))
+            if(Input.GetKey(KeyCode.Q))
             {
                 UI_Panel.SetActive(false);
                 panelOpen = false;
