@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
     public bool drumRune = false;
 
     //Puzzle 4
-    bool pianoKey1 = false;
     bool pianoKey2 = false;
-    bool pianoKey3 = false;
+    bool pianoKey4 = false;
+    bool pianoKey5 = false;
     public bool pianoRune = false;
 
     //Puzzle 5
@@ -163,17 +163,32 @@ public class PlayerController : MonoBehaviour
         return xylophoneKey2;
     }
 
+    public bool checkPianoKey2()
+    {
+        return pianoKey2;
+    }
+
+    public bool checkPianoKey4()
+    {
+        return pianoKey4;
+    }
+
+    public bool checkPianoKey5()
+    {
+        return pianoKey5;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         //moving objects
-        if(other.tag == "Moveable")
+        if (other.tag == "Moveable")
         {
             interact = true;
             if (Input.GetKey(KeyCode.E))
             {
                 other.transform.parent = transform;
-               
-                
+
+
                 if (useOnce == true)
                 {
                     pickup.Play();
@@ -183,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
 
             }
-            
+
             else
             {
                 useOnce = true;
@@ -192,7 +207,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Collect Battery
-        if(other.tag == "Battery")
+        if (other.tag == "Battery")
         {
             interact = true;
             if (Input.GetKey(KeyCode.E))
@@ -201,10 +216,10 @@ public class PlayerController : MonoBehaviour
                 other.gameObject.SetActive(false);
                 interact = false;
                 collect.Play();
-                    useOnce = false;
+                useOnce = false;
 
-                
-                
+
+
             }
         }
 
@@ -230,12 +245,12 @@ public class PlayerController : MonoBehaviour
 
                 collect.Play();
 
-                
+
             }
         }
 
         //Collect BigKey
-        if(other.tag == "BigKey")
+        if (other.tag == "BigKey")
         {
             interact = true;
             if (Input.GetKey(KeyCode.E))
@@ -262,7 +277,52 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Collect PianoKey2
+        if (other.tag == "PianoKey2")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                pianoKey2 = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+        }
+
+        //Collect PianoKey4
+        if (other.tag == "PianoKey4")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                pianoKey4 = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+
+        }
+
+        //Collect PianoKey5
+        if (other.tag == "PianoKey5")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                pianoKey5 = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+
+        }
     }
+
+
     private void OnTriggerExit(Collider col)
     {
         if (col.tag == "Cables")
@@ -288,6 +348,21 @@ public class PlayerController : MonoBehaviour
         }
 
         if (col.tag == "SmallKey")
+        {
+            interact = false;
+        }
+
+        if(col.tag == "PianoKey2")
+        {
+            interact = false;
+        }
+
+        if (col.tag == "PianoKey4")
+        {
+            interact = false;
+        }
+
+        if (col.tag == "PianoKey5")
         {
             interact = false;
         }
