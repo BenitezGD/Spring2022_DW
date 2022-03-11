@@ -24,6 +24,8 @@ public class ViolinPanel : MonoBehaviour
 
     public bool puzzleSolved = false;
 
+    public AudioSource bad;
+    public AudioSource good;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,12 +59,23 @@ public class ViolinPanel : MonoBehaviour
             scroll1Correct.gameObject.SetActive(true);
             scroll1Position = true;
 
+            if (!good.isPlaying)
+            {
+                bad.Stop();
+                good.Play();
+            }
         }
 
         else
         {
             scroll1Correct.gameObject.SetActive(false);
             scroll1Position = false;
+            if (!bad.isPlaying)
+            {
+                good.Stop();
+                bad.Play();
+            }
+
         }
 
         //Bottom Scroll Bar
@@ -70,13 +83,23 @@ public class ViolinPanel : MonoBehaviour
         {
             scroll2Correct.gameObject.SetActive(true);
             scroll2Position = true;
-
+            if (!good.isPlaying)
+            {
+                bad.Stop();
+                good.Play();
+            }
         }
 
         else
         {
             scroll2Correct.gameObject.SetActive(false);
             scroll2Position = false;
+            if (!bad.isPlaying)
+            {
+                good.Stop();
+
+                bad.Play();
+            }
         }
 
     }

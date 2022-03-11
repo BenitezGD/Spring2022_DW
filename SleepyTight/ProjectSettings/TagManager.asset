@@ -13,6 +13,8 @@ TagManager:
   - Cables
   - MusicPlayer
   - Interact
+  - BigKey
+  - SmallKey
   layers:
   - Default
   - TransparentFX
