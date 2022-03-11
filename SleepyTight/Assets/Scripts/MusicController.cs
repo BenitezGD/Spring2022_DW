@@ -15,7 +15,7 @@ public class MusicController : MonoBehaviour
     public AudioSource fluteB;
 
     public bool pianoPlaying;
-    public bool drumsPlaying;
+    public bool drumsPlaying = true;
     public bool violinPlaying;
     public bool xyloPlaying;
     public bool flutePlaying;

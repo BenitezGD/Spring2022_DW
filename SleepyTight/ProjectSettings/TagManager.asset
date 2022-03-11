@@ -15,6 +15,13 @@ TagManager:
   - Interact
   - BigKey
   - SmallKey
+  - 2e
+  - Donee
+  - 5e
+  - 6e
+  - 3e
+  - 4e
+  - 1e
   layers:
   - Default
   - TransparentFX

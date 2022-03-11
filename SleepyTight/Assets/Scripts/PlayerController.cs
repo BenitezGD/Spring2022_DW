@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Animator anim;
-
+    public teleportRooms cam;
 
 
     public float speed = 20;
@@ -292,6 +292,33 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "1e")
+        {
+            cam.prepLoad(1);
+        }
+        else if (col.tag == "2e")
+        {
+            cam.prepLoad(2);
+        }
+        else if (col.tag == "3e")
+        {
+            cam.prepLoad(3);
+        }
+        else if (col.tag == "4e")
+        {
+            cam.prepLoad(4);
+        }
+        else if (col.tag == "5e")
+        {
+            cam.prepLoad(5);
+        }
+        else if (col.tag == "6e")
+        {
+            cam.prepLoad(6);
+        }
+        
+    }
 
 }
