@@ -152,8 +152,19 @@ public class PlayerController : MonoBehaviour
         return violinCables;
     }
 
+    public bool checkBigKey()
+    {
+        return xylophoneKey1;
+    }
+
+    public bool checkSmallKey()
+    {
+        return xylophoneKey2;
+    }
+
     private void OnTriggerStay(Collider other)
     {
+        //moving objects
         if(other.tag == "Moveable")
         {
             interact = true;
@@ -179,7 +190,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
+        //Collect Battery
         if(other.tag == "Battery")
         {
             interact = true;
@@ -206,7 +217,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
+        //Collect Cables
         if (other.tag == "Cables")
         {
             interact = true;
@@ -221,6 +232,35 @@ public class PlayerController : MonoBehaviour
                 
             }
         }
+
+        //Collect BigKey
+        if(other.tag == "BigKey")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                xylophoneKey1 = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+        }
+
+        //Collect SmallKey
+        if (other.tag == "SmallKey")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                xylophoneKey2 = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+        }
+
     }
     private void OnTriggerExit(Collider col)
     {
@@ -237,6 +277,16 @@ public class PlayerController : MonoBehaviour
             interact = false;
         }
         if (col.tag == "Moveable")
+        {
+            interact = false;
+        }
+
+        if(col.tag == "BigKey")
+        {
+            interact = false;
+        }
+
+        if (col.tag == "SmallKey")
         {
             interact = false;
         }
