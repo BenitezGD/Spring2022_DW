@@ -22,6 +22,9 @@ TagManager:
   - 3e
   - 4e
   - 1e
+  - PianoKey2
+  - PianoKey5
+  - PianoKey4
   layers:
   - Default
   - TransparentFX
