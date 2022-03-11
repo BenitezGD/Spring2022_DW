@@ -25,6 +25,7 @@ public class PianoPanal : MonoBehaviour
     public AudioSource note3;
     public AudioSource note4;
     public AudioSource note5;
+    public AudioSource complete;
 
     bool musicboxPlaying = false;
 
@@ -36,6 +37,8 @@ public class PianoPanal : MonoBehaviour
     float timer = 9.0f;
 
     public bool puzzleSolved = false;
+
+    public GameObject pianoRune;
     
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,12 @@ public class PianoPanal : MonoBehaviour
             if(answer[0] == playerChoice[0] && answer[1] == playerChoice[1] && answer[2] == playerChoice[2] && answer[3] == playerChoice[3] && answer[4] == playerChoice[4])
             {
                 puzzleSolved = true;
+                if (!complete.isPlaying)
+                {
+                    complete.Play();
+                }
+                pianoRune.gameObject.SetActive(true);
+
             }
 
             else
