@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CheckWin : MonoBehaviour
 {
+    public SwitchRooms sr;
+
     public ViolinPanel vp;
     public ViolinTune vt;
 
@@ -20,11 +22,15 @@ public class CheckWin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(vp.puzzleSolved && vt.puzzleSolved)
+        if (sr.sceneNum == 1)
         {
-            door.gameObject.SetActive(false);
-            violinRune.gameObject.SetActive(true);
-            player.violinRune = true;
+            if(vp.puzzleSolved && vt.puzzleSolved)
+            {
+                door.gameObject.SetActive(false);
+                violinRune.gameObject.SetActive(true);
+                player.violinRune = true;
+            }
         }
     }
+
 }
