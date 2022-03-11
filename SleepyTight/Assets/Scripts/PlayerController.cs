@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         spr = GetComponent<SpriteRenderer>();
         questionMark.gameObject.SetActive(false);
+      
     }
 
     // Update is called once per frame

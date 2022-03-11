@@ -15,7 +15,7 @@ public class MusicController : MonoBehaviour
     public AudioSource fluteB;
 
     public bool pianoPlaying;
-    public bool drumsPlaying = true;
+    public bool drumsPlaying;
     public bool violinPlaying;
     public bool xyloPlaying;
     public bool flutePlaying;
@@ -32,6 +32,7 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        drumsPlaying = true;
         if (first == true)
         {
             if (pianoPlaying == true)

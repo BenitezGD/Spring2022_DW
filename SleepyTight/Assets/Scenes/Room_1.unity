@@ -5285,7 +5285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b266b9757ee8a46a5a160bfeb38ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 66442362}
   vp: {fileID: 1703941093}
   vt: {fileID: 1875179523}
   door: {fileID: 1863069397}
@@ -9422,6 +9421,8 @@ MonoBehaviour:
   scroll2Position: 0
   player: {fileID: 0}
   puzzleSolved: 0
+  bad: {fileID: 0}
+  good: {fileID: 0}
 --- !u!1 &1695543594
 GameObject:
   m_ObjectHideFlags: 0
@@ -9561,6 +9562,8 @@ MonoBehaviour:
   scroll2Position: 0
   player: {fileID: 1965882757}
   puzzleSolved: 0
+  bad: {fileID: 0}
+  good: {fileID: 0}
 --- !u!225 &1703941094
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10611,6 +10614,10 @@ MonoBehaviour:
   solved: {fileID: 401001895}
   player: {fileID: 1965882757}
   puzzleSolved: 0
+  n1: {fileID: 0}
+  n2: {fileID: 0}
+  n3: {fileID: 0}
+  wrongNote: {fileID: 0}
 --- !u!1 &1894899741
 GameObject:
   m_ObjectHideFlags: 0
@@ -11159,6 +11166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1965882754}
+  cam: {fileID: 0}
   speed: 6
   violinRune: 0
   xylophoneRune: 0
