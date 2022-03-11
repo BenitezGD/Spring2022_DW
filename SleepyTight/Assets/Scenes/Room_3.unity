@@ -3848,9 +3848,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56af4f7727c9ce34985222e418b5882c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOverlapping: 0
   Player: {fileID: 0}
   UI_Panel: {fileID: 1703941091}
   playerInteracting: 0
+  panelOpen: 0
 --- !u!4 &753315514
 Transform:
   m_ObjectHideFlags: 0
@@ -7580,17 +7582,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542858692}
   m_CullTransparentMesh: 1
---- !u!114 &1547151777 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1626858052608284943, guid: 7f2631ff70a56df4ba4e8f0b9d3fc97a, type: 3}
-  m_PrefabInstance: {fileID: 2329838715314826474}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254dfd50737cb5f4da6dca4a2fb50b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1562783216
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,6 +8723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c419722888a53284ca85681bc8ce6044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
   scroll1: {fileID: 0}
   scroll2: {fileID: 0}
   scroll1Correct: {fileID: 0}
@@ -8871,6 +8863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c419722888a53284ca85681bc8ce6044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
   scroll1: {fileID: 752509062}
   scroll2: {fileID: 1542858694}
   scroll1Correct: {fileID: 2015594300}
@@ -9360,9 +9353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56af4f7727c9ce34985222e418b5882c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOverlapping: 0
   Player: {fileID: 0}
   UI_Panel: {fileID: 1703941091}
   playerInteracting: 0
+  panelOpen: 0
 --- !u!4 &1743178455
 Transform:
   m_ObjectHideFlags: 0
@@ -9930,8 +9925,6 @@ MonoBehaviour:
   battery: {fileID: 384295405}
   batteryPlaced: 0
   solved: {fileID: 401001895}
-  player: {fileID: 1965882757}
-  puzzleSolved: 0
 --- !u!1 &1894899741
 GameObject:
   m_ObjectHideFlags: 0
@@ -10376,16 +10369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b87b2df801b874089e03080cbf644b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1965882754}
   speed: 6
-  violinRune: 1
-  xylophoneRune: 1
-  drumRune: 0
-  pianoRune: 0
-  fluteRune: 0
-  musicPlayer: {fileID: 1547151777}
-  pickup: {fileID: 1965882760}
-  collect: {fileID: 1965882761}
 --- !u!65 &1965882758
 BoxCollider:
   m_ObjectHideFlags: 0
