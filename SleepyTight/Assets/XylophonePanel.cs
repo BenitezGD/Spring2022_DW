@@ -13,6 +13,9 @@ public class XylophonePanel : MonoBehaviour
 
     public PlayerController player;
 
+    public GameObject bigKeySprite;
+    public GameObject smallKeySprite;
+
     public bool puzzleSolved = false;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,7 @@ public class XylophonePanel : MonoBehaviour
         {
             bigKey.gameObject.SetActive(true);
             bigKeyMissing.gameObject.SetActive(false);
+            bigKeySprite.SetActive(true);
         }
     }
 
@@ -44,6 +48,7 @@ public class XylophonePanel : MonoBehaviour
         {
             smallKey.gameObject.SetActive(true);
             smallKeyMissing.gameObject.SetActive(false);
+            smallKeySprite.SetActive(true);
         }
     }
 }

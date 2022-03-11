@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class teleportRooms : MonoBehaviour
 {
+    /*
     public Animator anim;
 
     public GameObject player;
@@ -57,5 +58,5 @@ public class teleportRooms : MonoBehaviour
     }
 
 
-
+    */
 }
