@@ -12,6 +12,7 @@ TagManager:
   - Battery
   - Cables
   - MusicPlayer
+  - Interact
   layers:
   - Default
   - TransparentFX
