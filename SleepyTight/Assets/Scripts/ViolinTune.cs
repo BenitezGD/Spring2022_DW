@@ -26,6 +26,14 @@ public class ViolinTune : MonoBehaviour
 
     public PlayerController player;
     public bool puzzleSolved = false;
+
+    public AudioSource n1;
+    public AudioSource n2;
+    public AudioSource n3;
+    public AudioSource wrongNote;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +116,10 @@ public class ViolinTune : MonoBehaviour
                     playerChoice[i] = 0;    
                 }
                 buttonsPressedInARow = 0;
+                if (!wrongNote.isPlaying)
+                {
+                    wrongNote.Play();
+                }
                 //PLAY SOUND HERE WHEN WRONG
             }
         }
@@ -119,6 +131,10 @@ public class ViolinTune : MonoBehaviour
         {
             if(playerChoice[i] == 0)
             {
+                if (!n2.isPlaying)
+                {
+                    n2.Play();
+                }
                 playerChoice[i] = 1;
                 green.interactable = false;
                 buttonsPressedInARow++;
@@ -133,6 +149,10 @@ public class ViolinTune : MonoBehaviour
         {
             if (playerChoice[i] == 0)
             {
+                if (!n3.isPlaying)
+                {
+                    n3.Play();
+                }
                 playerChoice[i] = 2;
                 cyan.interactable = false;
                 buttonsPressedInARow++;
@@ -147,6 +167,10 @@ public class ViolinTune : MonoBehaviour
         {
             if (playerChoice[i] == 0)
             {
+                if (!n1.isPlaying)
+                {
+                    n1.Play();
+                }
                 playerChoice[i] = 3;
                 yellow.interactable = false;
                 buttonsPressedInARow++;
