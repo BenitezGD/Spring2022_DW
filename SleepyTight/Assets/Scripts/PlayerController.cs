@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
 
     //Puzzle 5
     bool finger = false;
-    bool flutePiece2 = false;
-    bool fluteBreath = false;
+    bool fluteEnd = false;
+    bool fluteMouth = false;
     public bool fluteRune = false;
 
     //Meta-Puzzle
@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
     }
 
 
@@ -176,6 +175,16 @@ public class PlayerController : MonoBehaviour
     public bool checkPianoKey5()
     {
         return pianoKey5;
+    }
+
+    public bool checkFluteEnd()
+    {
+        return fluteEnd;
+    }
+
+    public bool checkFluteMouth()
+    {
+        return fluteMouth;
     }
 
     private void OnTriggerStay(Collider other)
@@ -320,6 +329,35 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        //Collect FluteMouth
+        if (other.tag == "FluteMouth")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                fluteMouth = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+
+        }
+        //Collect FluteEnd
+        if (other.tag == "FluteEnd")
+        {
+            interact = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                fluteEnd = true;
+                other.gameObject.SetActive(false);
+                interact = false;
+
+                collect.Play();
+            }
+
+        }
     }
 
 
@@ -363,6 +401,16 @@ public class PlayerController : MonoBehaviour
         }
 
         if (col.tag == "PianoKey5")
+        {
+            interact = false;
+        }
+
+        if (col.tag == "FluteMouth")
+        {
+            interact = false;
+        }
+
+        if (col.tag == "FluteEnd")
         {
             interact = false;
         }
